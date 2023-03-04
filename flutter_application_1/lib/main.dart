@@ -11,9 +11,14 @@ void main() {
       create: (context) => ChangeColor(), child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyState();
+  }
+}
 
+class MyState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
