@@ -16,7 +16,7 @@ class CardHero extends StatelessWidget {
         child: GestureDetector(
           onTap: () => _clickHero(context),
           child: Hero(
-            tag: _hero.name,
+            tag: {_hero.name},
             child: Card(
                 elevation: 0.6,
                 clipBehavior: Clip.hardEdge,
@@ -29,14 +29,13 @@ class CardHero extends StatelessWidget {
                     fit: BoxFit.cover,
                   )),
                   Positioned(
-                      bottom: 10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          _hero.name,
-                          style: titleStyle,
-                        ),
-                      )),
+                    bottom: 10,
+                    left: 10,
+                    child: Text(
+                      _hero.name,
+                      style: titleStyle,
+                    ),
+                  ),
                 ])),
           ),
         ));
